@@ -6,9 +6,14 @@ An intelligent Machine Learning application designed to estimate the **market va
 
 The project compares multiple regression algorithms and selects the best-performing model for real-time price prediction through an interactive **Streamlit web application**.
 
-
 ---
 
+## 🌐 Live Demo
+
+🚀 Try the deployed application:
+https://used-car-price-prediction-lrtvy8so4ctyjajhqzft5a.streamlit.app/
+
+---
 
 ## 🌟 Project Overview
 
