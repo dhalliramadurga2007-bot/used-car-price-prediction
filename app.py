@@ -29,491 +29,91 @@ model = load_model()
 
 
 # ============================================================
-# PREMIUM SHOWROOM BACKGROUND
-# SLOW ZOOM IN / ZOOM OUT
+# CUSTOM PROFESSIONAL CSS
 # ============================================================
 
 st.markdown(
-    """
+"""
 <style>
 
-/* ==========================================================
-   MAIN APP
-========================================================== */
-
+/* Main page */
 .stApp {
-    background: #05070c;
-    overflow-x: hidden;
-}
-
-
-/* ==========================================================
-   CINEMATIC SHOWROOM CAR BACKGROUND
-========================================================== */
-
-.stApp::before {
-
-    content: "";
-
-    position: fixed;
-
-    top: -6%;
-    left: -6%;
-
-    width: 112%;
-    height: 112%;
-
-    z-index: 0;
-
-    pointer-events: none;
-
-    background-image:
-        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=95");
-
-    background-size: cover;
-
-    background-position: center center;
-
-    background-repeat: no-repeat;
-
-    filter:
-        brightness(0.50)
-        contrast(1.12)
-        saturate(0.92);
-
-    animation:
-        showroomZoom 10s ease-in-out infinite alternate;
-
-}
-
-
-/* ==========================================================
-   DARK SHOWROOM OVERLAY
-========================================================== */
-
-.stApp::after {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 1;
-
-    pointer-events: none;
-
     background:
-
-        radial-gradient(
-            circle at 68% 42%,
-            rgba(0,0,0,0.02) 0%,
-            rgba(3,7,18,0.12) 35%,
-            rgba(3,7,18,0.70) 100%
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(3,7,18,0.88) 0%,
-            rgba(3,7,18,0.58) 38%,
-            rgba(3,7,18,0.22) 72%,
-            rgba(3,7,18,0.45) 100%
-        );
-
+        radial-gradient(circle at 10% 10%, rgba(30, 64, 175, 0.12), transparent 25%),
+        radial-gradient(circle at 90% 20%, rgba(14, 165, 233, 0.10), transparent 25%);
 }
-
-
-/* ==========================================================
-   SLOW ZOOM ANIMATION
-========================================================== */
-
-@keyframes showroomZoom {
-
-    0% {
-
-        transform:
-            scale(1.00);
-
-    }
-
-    50% {
-
-        transform:
-            scale(1.06);
-
-    }
-
-    100% {
-
-        transform:
-            scale(1.12);
-
-    }
-
-}
-
-
-/* ==========================================================
-   STREAMLIT CONTENT ABOVE BACKGROUND
-========================================================== */
-
-[data-testid="stAppViewContainer"] {
-    background: transparent !important;
-}
-
-
-[data-testid="stMain"] {
-
-    background:
-        transparent !important;
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-}
-
 
 .block-container {
-
-    max-width:
-        1250px;
-
-    padding-top:
-        2rem;
-
-    padding-bottom:
-        3rem;
-
-    position:
-        relative;
-
-    z-index:
-        3;
-
+    max-width: 1250px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
-
-/* ==========================================================
-   SIDEBAR
-========================================================== */
-
-section[data-testid="stSidebar"] {
-
-    background:
-        rgba(4, 9, 20, 0.91) !important;
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    border-right:
-        1px solid rgba(255,255,255,0.10);
-
-    z-index:
-        5;
-
-}
-
-
-/* ==========================================================
-   MAIN CARDS
-========================================================== */
-
-[data-testid="stVerticalBlockBorderWrapper"] {
-
-    background:
-        rgba(5, 12, 24, 0.66) !important;
-
-    backdrop-filter:
-        blur(16px);
-
-    -webkit-backdrop-filter:
-        blur(16px);
-
-    border:
-        1px solid rgba(255,255,255,0.14) !important;
-
-    border-radius:
-        20px !important;
-
-    box-shadow:
-        0px 15px 40px rgba(0,0,0,0.30);
-
-}
-
-
-/* ==========================================================
-   TITLE
-========================================================== */
-
+/* Main title */
 h1 {
-
-    color:
-        #ffffff !important;
-
-    font-size:
-        3.2rem !important;
-
-    font-weight:
-        850 !important;
-
-    letter-spacing:
-        -1px;
-
-    text-shadow:
-        0px 6px 28px rgba(0,0,0,0.75);
-
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
 }
 
-
-h2,
-h3 {
-
-    color:
-        #f8fafc !important;
-
-    font-weight:
-        750 !important;
-
-    text-shadow:
-        0px 3px 16px rgba(0,0,0,0.55);
-
+/* Headings */
+h2, h3 {
+    font-weight: 700 !important;
 }
 
-
-/* ==========================================================
-   TEXT
-========================================================== */
-
-p,
-span {
-
-    color:
-        #e2e8f0;
-
+/* Containers */
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-radius: 18px !important;
+    border: 1px solid rgba(120, 120, 120, 0.22) !important;
+    box-shadow: 0px 8px 26px rgba(0,0,0,0.05);
 }
 
-
-/* ==========================================================
-   LABELS
-========================================================== */
-
-label {
-
-    color:
-        #f1f5f9 !important;
-
-    font-weight:
-        600 !important;
-
-}
-
-
-/* ==========================================================
-   CAPTIONS
-========================================================== */
-
-[data-testid="stCaptionContainer"] {
-
-    color:
-        #cbd5e1 !important;
-
-}
-
-
-/* ==========================================================
-   INPUTS
-========================================================== */
-
+/* Inputs */
 div[data-baseweb="input"] > div {
-
-    border-radius:
-        12px !important;
-
+    border-radius: 10px !important;
 }
-
 
 div[data-baseweb="select"] > div {
-
-    border-radius:
-        12px !important;
-
+    border-radius: 10px !important;
 }
 
-
-/* ==========================================================
-   METRICS
-========================================================== */
-
-[data-testid="stMetric"] {
-
-    padding:
-        18px;
-
-    border-radius:
-        16px;
-
-    background:
-        rgba(3,7,18,0.68);
-
-    backdrop-filter:
-        blur(14px);
-
-    border:
-        1px solid rgba(255,255,255,0.11);
-
-    box-shadow:
-        0px 8px 24px rgba(0,0,0,0.20);
-
-}
-
-
-/* ==========================================================
-   BUTTON
-========================================================== */
-
-div.stButton > button {
-
-    border-radius:
-        13px;
-
-    font-weight:
-        750;
-
-}
-
-
+/* Primary button */
 div.stButton > button[kind="primary"] {
-
-    height:
-        56px;
-
-    font-size:
-        17px;
-
-    font-weight:
-        800;
-
-    border:
-        1px solid rgba(255,255,255,0.17);
-
-    background:
-        linear-gradient(
-            90deg,
-            #0f172a 0%,
-            #1d4ed8 50%,
-            #0369a1 100%
-        );
-
-    box-shadow:
-        0px 10px 30px rgba(37,99,235,0.32);
-
-    transition:
-        all 0.30s ease;
-
+    height: 54px;
+    border-radius: 12px;
+    font-weight: 750;
+    font-size: 17px;
+    box-shadow: 0px 8px 24px rgba(59, 130, 246, 0.18);
 }
 
-
-div.stButton > button[kind="primary"]:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0px 15px 40px rgba(37,99,235,0.45);
-
+/* Normal buttons */
+div.stButton > button {
+    border-radius: 12px;
+    font-weight: 650;
 }
 
+/* Metrics */
+[data-testid="stMetric"] {
+    padding: 17px;
+    border-radius: 15px;
+    background: rgba(120,120,120,0.06);
+    border: 1px solid rgba(120,120,120,0.15);
+}
 
-/* ==========================================================
-   ALERT
-========================================================== */
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    border-right: 1px solid rgba(120,120,120,0.15);
+}
 
+/* Success box */
 div[data-testid="stAlert"] {
-
-    border-radius:
-        14px;
-
-    backdrop-filter:
-        blur(14px);
-
+    border-radius: 12px;
 }
 
-
-/* ==========================================================
-   DIVIDER
-========================================================== */
-
+/* Divider spacing */
 hr {
-
-    border-color:
-        rgba(255,255,255,0.13) !important;
-
-}
-
-
-/* ==========================================================
-   DATAFRAME
-========================================================== */
-
-[data-testid="stDataFrame"] {
-
-    border-radius:
-        15px;
-
-    overflow:
-        hidden;
-
-}
-
-
-/* ==========================================================
-   EXPANDER
-========================================================== */
-
-[data-testid="stExpander"] {
-
-    background:
-        rgba(3,7,18,0.58);
-
-    backdrop-filter:
-        blur(12px);
-
-    border:
-        1px solid rgba(255,255,255,0.10);
-
-    border-radius:
-        16px;
-
-}
-
-
-/* ==========================================================
-   MOBILE
-========================================================== */
-
-@media (max-width: 768px) {
-
-    .stApp::before {
-
-        background-position:
-            62% center;
-
-    }
-
-
-    h1 {
-
-        font-size:
-            2.3rem !important;
-
-    }
-
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
 }
 
 </style>
@@ -590,9 +190,7 @@ with st.sidebar:
 # HERO / HEADER
 # ============================================================
 
-st.title(
-    "🚗 Used Car Price Prediction"
-)
+st.title("🚗 Used Car Price Prediction")
 
 st.subheader(
     "AI-Powered Vehicle Valuation System"
@@ -606,37 +204,26 @@ st.write(
     """
 )
 
-
-# ============================================================
-# TOP METRICS
-# ============================================================
-
+# Top info metrics
 top1, top2, top3 = st.columns(3)
 
-
 with top1:
-
     st.metric(
         "Final Algorithm",
         "XGBoost"
     )
 
-
 with top2:
-
     st.metric(
         "R² Score",
         "92.02%"
     )
 
-
 with top3:
-
     st.metric(
         "Input Features",
         "8"
     )
-
 
 st.divider()
 
@@ -647,16 +234,13 @@ st.divider()
 
 with st.container(border=True):
 
-    st.subheader(
-        "🚘 Vehicle Information"
-    )
+    st.subheader("🚘 Vehicle Information")
 
     st.caption(
         "Enter the basic identity and manufacturing details of the vehicle."
     )
 
     col1, col2, col3 = st.columns(3)
-
 
     with col1:
 
@@ -667,7 +251,6 @@ with st.container(border=True):
             help="Enter the vehicle manufacturer."
         )
 
-
     with col2:
 
         model_name = st.text_input(
@@ -676,7 +259,6 @@ with st.container(border=True):
             placeholder="Example: City",
             help="Enter only the model name. Brand name will be handled automatically."
         )
-
 
     with col3:
 
@@ -695,19 +277,15 @@ with st.container(border=True):
 
 st.write("")
 
-
 with st.container(border=True):
 
-    st.subheader(
-        "⛽ Driving & Performance"
-    )
+    st.subheader("⛽ Driving & Performance")
 
     st.caption(
         "Provide the fuel, transmission and usage information."
     )
 
     col4, col5, col6 = st.columns(3)
-
 
     with col4:
 
@@ -722,7 +300,6 @@ with st.container(border=True):
             ]
         )
 
-
     with col5:
 
         transmission = st.selectbox(
@@ -732,7 +309,6 @@ with st.container(border=True):
                 "Automatic"
             ]
         )
-
 
     with col6:
 
@@ -752,19 +328,15 @@ with st.container(border=True):
 
 st.write("")
 
-
 with st.container(border=True):
 
-    st.subheader(
-        "⚙️ Additional Details"
-    )
+    st.subheader("⚙️ Additional Details")
 
     st.caption(
         "Add vehicle seating capacity and body type."
     )
 
     col7, col8 = st.columns(2)
-
 
     with col7:
 
@@ -775,7 +347,6 @@ with st.container(border=True):
             value=5,
             step=1
         )
-
 
     with col8:
 
@@ -798,14 +369,11 @@ with st.container(border=True):
 
 st.write("")
 
-st.subheader(
-    "🔮 Generate Price Estimate"
-)
+st.subheader("🔮 Generate Price Estimate")
 
 st.caption(
     "Review the vehicle details and click below to calculate the estimated used-car price."
 )
-
 
 predict_button = st.button(
     "✨ Predict Estimated Car Price",
@@ -827,52 +395,38 @@ if predict_button:
         # ----------------------------------------------------
 
         if not brand.strip():
-
-            st.error(
-                "Please enter the car brand."
-            )
-
+            st.error("Please enter the car brand.")
             st.stop()
 
-
         if not model_name.strip():
-
-            st.error(
-                "Please enter the car model."
-            )
-
+            st.error("Please enter the car model.")
             st.stop()
 
 
         # ----------------------------------------------------
         # CLEAN BRAND
+        # Honda / HONDA / honda -> honda
         # ----------------------------------------------------
 
-        brand_clean = (
-            brand
-            .strip()
-            .lower()
-        )
+        brand_clean = brand.strip().lower()
 
 
         # ----------------------------------------------------
         # CLEAN MODEL
+        # City / CITY -> city
         # ----------------------------------------------------
 
-        model_clean = (
-            model_name
-            .strip()
-            .lower()
-        )
+        model_clean = model_name.strip().lower()
 
 
         # ----------------------------------------------------
-        # ADD BRAND TO MODEL
+        # ADD BRAND TO MODEL IF REQUIRED
+        #
+        # Honda + City -> honda city
+        # BMW + 3 Series -> bmw 3 series
         # ----------------------------------------------------
 
-        if not model_clean.startswith(
-            brand_clean
-        ):
+        if not model_clean.startswith(brand_clean):
 
             model_clean = (
                 brand_clean
@@ -882,22 +436,16 @@ if predict_button:
 
 
         # ----------------------------------------------------
-        # CLEAN OTHER INPUTS
+        # CLEAN OTHER CATEGORICAL INPUTS
         # ----------------------------------------------------
 
-        fuel_clean = (
-            fuel_type
-            .strip()
-            .lower()
-        )
-
+        fuel_clean = fuel_type.strip().lower()
 
         transmission_clean = (
             transmission
             .strip()
             .lower()
         )
-
 
         body_clean = (
             body_type
@@ -908,6 +456,8 @@ if predict_button:
 
         # ----------------------------------------------------
         # CREATE MODEL INPUT
+        #
+        # DO NOT CHANGE THESE COLUMN NAMES
         # ----------------------------------------------------
 
         input_data = pd.DataFrame({
@@ -968,7 +518,6 @@ if predict_button:
             log_prediction
         )
 
-
         predicted_price = max(
             float(predicted_price),
             0
@@ -985,18 +534,14 @@ if predict_button:
 
 
         # ----------------------------------------------------
-        # RESULT
+        # BIG RESULT SECTION
         # ----------------------------------------------------
 
-        st.subheader(
-            "💰 Estimated Market Value"
-        )
-
+        st.subheader("💰 Estimated Market Value")
 
         result_col1, result_col2 = st.columns(
             [2, 1]
         )
-
 
         with result_col1:
 
@@ -1008,7 +553,6 @@ if predict_button:
             st.caption(
                 "AI-powered price estimate generated using the final XGBoost regression model."
             )
-
 
         with result_col2:
 
@@ -1028,15 +572,9 @@ if predict_button:
 
         st.write("")
 
-        st.subheader(
-            "📋 Vehicle Summary"
-        )
+        st.subheader("📋 Vehicle Summary")
 
-
-        summary1, summary2, summary3, summary4 = st.columns(
-            4
-        )
-
+        summary1, summary2, summary3, summary4 = st.columns(4)
 
         with summary1:
 
@@ -1050,7 +588,6 @@ if predict_button:
                 model_name.title()
             )
 
-
         with summary2:
 
             st.metric(
@@ -1063,7 +600,6 @@ if predict_button:
                 fuel_type
             )
 
-
         with summary3:
 
             st.metric(
@@ -1075,7 +611,6 @@ if predict_button:
                 "Body Type",
                 body_type
             )
-
 
         with summary4:
 
@@ -1126,7 +661,6 @@ if predict_button:
 
             })
 
-
             st.dataframe(
                 details,
                 use_container_width=True,
@@ -1158,7 +692,6 @@ if predict_button:
 
 st.write("")
 
-
 with st.expander(
     "📊 Why XGBoost Was Selected"
 ):
@@ -1169,7 +702,6 @@ with st.expander(
         final prediction features.
         """
     )
-
 
     comparison_data = pd.DataFrame({
 
@@ -1199,13 +731,11 @@ with st.expander(
 
     })
 
-
     st.dataframe(
         comparison_data,
         use_container_width=True,
         hide_index=True
     )
-
 
     st.success(
         "🏆 XGBoost was selected because it achieved the highest "
@@ -1219,21 +749,15 @@ with st.expander(
 
 st.write("")
 
-
 with st.expander(
     "🤖 About This System"
 ):
 
-    about1, about2, about3 = st.columns(
-        3
-    )
-
+    about1, about2, about3 = st.columns(3)
 
     with about1:
 
-        st.subheader(
-            "📥 Input"
-        )
+        st.subheader("📥 Input")
 
         st.write(
             """
@@ -1242,12 +766,9 @@ with st.expander(
             """
         )
 
-
     with about2:
 
-        st.subheader(
-            "🧠 Processing"
-        )
+        st.subheader("🧠 Processing")
 
         st.write(
             """
@@ -1256,12 +777,9 @@ with st.expander(
             """
         )
 
-
     with about3:
 
-        st.subheader(
-            "💰 Output"
-        )
+        st.subheader("💰 Output")
 
         st.write(
             """
@@ -1277,11 +795,9 @@ with st.expander(
 
 st.divider()
 
-
 footer1, footer2, footer3 = st.columns(
     [1, 2, 1]
 )
-
 
 with footer2:
 
